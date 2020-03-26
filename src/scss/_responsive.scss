@@ -1,0 +1,27 @@
+@media screen and (max-width: 840px) {
+    .section__header {
+        font-size: 200%;
+        margin-top: 20px;
+    }
+
+    .main__img {
+        left: 10px;
+        top: 10px;
+    }    
+}
+
+@media screen and (max-width: 420px) {
+    .main {
+        background-image: url('../img/main-small-fon.v1.gif');
+        background-size: 100% 100%;
+    }
+
+    .section {
+        background-image: none;
+    }
+
+    .main__img {
+        height: 5%;        
+    }    
+
+}
