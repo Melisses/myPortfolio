@@ -1,7 +1,9 @@
-@-webkit-keyframes fade-in {   0% { opacity: 0.1; }   100% { opacity: 1; }   }
-@-moz-keyframes    fade-in {   0% { opacity: 0.1; }   100% { opacity: 1; }   }
-@-o-keyframes      fade-in {   0% { opacity: 0.1; }   100% { opacity: 1; }   }
-@keyframes         fade-in {   0% { opacity: 0.1; }   100% { opacity: 1; }   }
+@-webkit-keyframes fade-in {0% { opacity: 0.1; }   100% { opacity: 1; }}
+@-moz-keyframes    fade-in {0% { opacity: 0.1; }   100% { opacity: 1; }}
+@-o-keyframes      fade-in {0% { opacity: 0.1; }   100% { opacity: 1; }}
+@keyframes         fade-in {0% { opacity: 0.1; }   100% { opacity: 1; }}
+@keyframes color {50% {color: #22c701;}}
+@keyframes main-rotate {100% {transform: rotateY(360deg); }}
  
 body {
   -webkit-animation: fade-in 2s linear; 
@@ -11,23 +13,42 @@ body {
   overflow-x: hidden;
 }
 
-.anchor_top {
-    position: fixed;
-    top: 20px;
-    cursor: default;
-    z-index: 10000;
+.section-fixed{
+  position: fixed;
+  z-index: 10000;
+  width: 100%;
+  top: 10px;
+}
+
+.anchor_top, .anchor_next {
+  cursor: default;
+}
+
+.anchor_next {
+    text-align: right;
 }
 
 .main__img {
+    width: 10%;
+    cursor: pointer;
+    transition: all 2s;
+}
+
+.main__img:hover {
     width: 15%;
+}
+
+.btn__road {
+    transform: rotate(-90deg);
+    width: 12%;
     cursor: pointer;
 }
 
-.greating-section {
+.section-greating {
     background-image: url('../img/main-background.gif');
 }
 
-.section-second {
+.section-aboutme {
     background-image: url('../img/main-second.jpg');
 }
 
@@ -40,19 +61,21 @@ body {
 }
 
 .section {
-    /* min-width: 100vw; */
+    min-width: 100vw;
     height: 100vh;
     background-size: 100% 100%;
     background-position: center top;
     background-repeat: no-repeat;
-    padding: 20px;
+    position: fixed;
+    opacity: 0;
+    transition: all 1s linear;
 }
 
 .section__header {
     color: white;
     text-align: center;
     font-size: 400%;
-    margin-top: 40px;
+    margin-top: 60px;
     letter-spacing: 1.2vw;
     text-shadow: 0 1px 0 #ccc,
     0 2px 0 #c9c9c9,
@@ -68,6 +91,30 @@ body {
     0 20px 20px rgba(0,0,0,.15);
 }
 
-.text__white {
-    color: white;
+.paragraph {
+    color: yellow;
+    font-size: 150%;
+    font-weight: bold;
+}
+
+.text__color {
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 200%;
+    animation: 2s color infinite;
+}
+
+.visible {
+    opacity: 1;
+    transition: all 2s linear;
+}
+
+.article__img {
+    width: 50%;
+}
+
+.img_hover {
+    width: 100%;
+    transform-style: preserve-3d;
+    animation: main-rotate 10s infinite linear;
 }
